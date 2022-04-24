@@ -34,6 +34,25 @@ class PropertiesSeeder extends Seeder
             'related_properties' => '',
         ]);
         Property::create([
+            'title' => 'Modern Family Home',
+            'short_description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus tincidunt aliquam. Aliquam gravida massa at sem vulputate interdum et vel eros. Maecenas eros enim, tincidunt vel turpis vel,dapibus tempus nulla. Donec vel nulla dui. Pellentesque sed ante sed ligula hendrerit condimentum. Suspendisse rhoncus fringilla ipsum quis porta. Morbi tincidunt viverra pharetra.',
+            'address' => '20/F Green Road, Dhanmondi, Dhaka',
+            'zipcode' => '2451',
+            'bedrooms' => '5',
+            'bathrooms' => '5',
+            'square' => '420',
+            'price' => '304000',
+            'property_id' => 'VA-0001',
+            'land' => 5200,
+            'year' => 2019,
+            'images' => serialize(["img-8.png","img-3.png"]),
+            'planes' => '',
+            'features' => '',
+            'video' => 'https://youtu.be/6XMuUVw7TOM',
+            'related_properties' => '',
+        ]);
+        Property::create([
             'title' => 'Relaxing Apartment',
             'short_description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus tincidunt aliquam. Aliquam gravida massa at sem vulputate interdum et vel eros. Maecenas eros enim, tincidunt vel turpis vel,dapibus tempus nulla. Donec vel nulla dui. Pellentesque sed ante sed ligula hendrerit condimentum. Suspendisse rhoncus fringilla ipsum quis porta. Morbi tincidunt viverra pharetra.',

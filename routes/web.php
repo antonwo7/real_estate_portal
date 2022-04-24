@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\Front\HomeController::class, 'index']);
+Route::get('/subscribe', [App\Http\Controllers\Front\SubscriptionController::class, 'store']);
 
 Route::group(['namespace' => 'Front', 'prefix' => 'front'], function() {
 
