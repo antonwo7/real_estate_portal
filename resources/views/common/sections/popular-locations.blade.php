@@ -3,8 +3,8 @@
     <div class="most-popular-places content-area-23 bg-white">
         <div class="container">
             <div class="main-title">
-                <h1>Most Popular Places</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                <h1>{{ $page_meta['locations-section-title'] }}</h1>
+                <p>{{ $page_meta['locations-section-subtitle'] }}</p>
             </div>
             <div class="container">
                 <div class="row">

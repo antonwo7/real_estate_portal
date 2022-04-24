@@ -20,7 +20,7 @@
         <div class="btn-secton">
             <ol class="carousel-indicators">
                 @foreach($sliders as $i => $slider)
-                    <li data-target="#carouselExampleIndicators" data-slide-to="{{ $i }}" {{ $i == 0 ? 'class="active"' : '' }}></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="{{ $i }}"></li>
                 @endforeach
             </ol>
         </div>

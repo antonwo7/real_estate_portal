@@ -14,9 +14,7 @@ class SubscriptionController extends BaseController
         try {
             $subscription = Subscription::where('email', $data['email'])->first();
             if(!$subscription){
-                Subscription::create([
-                    'email' => $request->email
-                ]);
+                Subscription::create(['email' => $data['email']]);
 
                 $result = 'success';
             }else{
@@ -27,6 +25,6 @@ class SubscriptionController extends BaseController
             $result = 'error';
         }
 
-        return redirect()->to('/')->with('subscription', $result);
+        return redirect('/')->with(['subscription' => $result]);
     }
 }

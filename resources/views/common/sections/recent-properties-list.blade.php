@@ -2,8 +2,8 @@
 <div class="recent-properties content-area-2">
     <div class="container">
         <div class="main-title">
-            <h1>Recent Properties</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+            <h1>{{ $page_meta['recent-section-title'] }}</h1>
+            <p>{{ $page_meta['recent-section-subtitle'] }}</p>
         </div>
         <div class="row">
             @foreach($recent_properties as $property)

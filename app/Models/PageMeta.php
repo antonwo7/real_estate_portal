@@ -2,14 +2,11 @@
 
 namespace App\Models;
 
+use App\Traits\SlugFromTitleTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Subscription extends Model
+class PageMeta extends Model
 {
-    use HasFactory;
-
-    protected $fillable = [
-        'email'
-    ];
+    use HasFactory, SlugFromTitleTrait;
 }

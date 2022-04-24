@@ -3,8 +3,8 @@
     <div class="agent content-area-2">
         <div class="container">
             <div class="main-title">
-                <h1>Meet Our Agents</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                <h1>{{ $page_meta['agents-section-title'] }}</h1>
+                <p>{{ $page_meta['agents-section-subtitle'] }}</p>
             </div>
             <div class="row">
                 @foreach($agents as $agent)

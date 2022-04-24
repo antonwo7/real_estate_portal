@@ -3,8 +3,8 @@
     <div class="blog content-area-2">
         <div class="container">
             <div class="main-title">
-                <h1>Latest Blog</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                <h1>{{ $page_meta['blog-section-title'] }}</h1>
+                <p>{{ $page_meta['blog-section-subtitle'] }}</p>
             </div>
             <div class="row">
                 @foreach($news as $new)

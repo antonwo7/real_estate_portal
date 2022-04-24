@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Property;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class PropertiesSeeder extends Seeder
@@ -14,6 +15,10 @@ class PropertiesSeeder extends Seeder
      */
     public function run()
     {
+        $agents = User::whereHas('role', function($q){
+            $q->where('slug', 'agent');
+        })->get();
+
         Property::create([
             'title' => 'Modern Family Home',
             'short_description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
@@ -32,6 +37,8 @@ class PropertiesSeeder extends Seeder
             'features' => '',
             'video' => 'https://youtu.be/6XMuUVw7TOM',
             'related_properties' => '',
+            'featured' => true,
+            'user_id' => $agents->random()->id
         ]);
         Property::create([
             'title' => 'Modern Family Home',
@@ -51,6 +58,8 @@ class PropertiesSeeder extends Seeder
             'features' => '',
             'video' => 'https://youtu.be/6XMuUVw7TOM',
             'related_properties' => '',
+            'featured' => true,
+            'user_id' => $agents->random()->id
         ]);
         Property::create([
             'title' => 'Relaxing Apartment',
@@ -70,6 +79,8 @@ class PropertiesSeeder extends Seeder
             'features' => '',
             'video' => 'https://youtu.be/6XMuUVw7TOM',
             'related_properties' => '',
+            'featured' => true,
+            'user_id' => $agents->random()->id
         ]);
         Property::create([
             'title' => 'Beautiful Single Home',
@@ -89,6 +100,8 @@ class PropertiesSeeder extends Seeder
             'features' => '',
             'video' => 'https://youtu.be/6XMuUVw7TOM',
             'related_properties' => '',
+            'featured' => true,
+            'user_id' => $agents->random()->id
         ]);
         Property::create([
             'title' => 'Real Luxury Villa',
@@ -108,7 +121,8 @@ class PropertiesSeeder extends Seeder
             'features' => '',
             'video' => 'https://youtu.be/6XMuUVw7TOM',
             'related_properties' => '',
-            'featured' => true
+            'featured' => true,
+            'user_id' => $agents->random()->id
         ]);
         Property::create([
             'title' => 'Masons Villas',
@@ -128,7 +142,8 @@ class PropertiesSeeder extends Seeder
             'features' => '',
             'video' => 'https://youtu.be/6XMuUVw7TOM',
             'related_properties' => '',
-            'featured' => true
+            'featured' => true,
+            'user_id' => $agents->random()->id
         ]);
         Property::create([
             'title' => 'Sweet Family Home',
@@ -148,7 +163,8 @@ class PropertiesSeeder extends Seeder
             'features' => '',
             'video' => 'https://youtu.be/6XMuUVw7TOM',
             'related_properties' => '',
-            'featured' => true
+            'featured' => true,
+            'user_id' => $agents->random()->id
         ]);
         Property::create([
             'title' => 'Modern Villa',
@@ -168,6 +184,8 @@ class PropertiesSeeder extends Seeder
             'features' => '',
             'video' => 'https://youtu.be/6XMuUVw7TOM',
             'related_properties' => '',
+            'featured' => true,
+            'user_id' => $agents->random()->id
         ]);
         Property::create([
             'title' => 'Modern Bungalow',
@@ -187,7 +205,8 @@ class PropertiesSeeder extends Seeder
             'features' => '',
             'video' => 'https://youtu.be/6XMuUVw7TOM',
             'related_properties' => '',
-            'featured' => true
+            'featured' => true,
+            'user_id' => $agents->random()->id
         ]);
     }
 }

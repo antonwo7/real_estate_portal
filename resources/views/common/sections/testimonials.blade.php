@@ -5,8 +5,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="main-title">
-                        <h1>Our Testimonial</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                        <h1>{{ $page_meta['testimonials-section-title'] }}</h1>
+                        <p>{{ $page_meta['testimonials-section-subtitle'] }}</p>
                     </div>
                 </div>
             </div>

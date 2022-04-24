@@ -68,11 +68,13 @@
         </ul>
     </div>
     <div class="footer">
-        <a href="#">
-            <i class="fa fa-user"></i> Jhon Doe
-        </a>
+        @if($property->agent)
+            <a href="#">
+                <i class="fa fa-user"></i> {{ $property->agent->name }}
+            </a>
+        @endif
         <span>
-            <i class="fa fa-calendar-o"></i> 2 years ago
+            <i class="fa fa-calendar-o"></i> {{ $property->created_at }}
         </span>
     </div>
 </div>

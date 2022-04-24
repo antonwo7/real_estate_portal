@@ -13,6 +13,11 @@ class Property extends Model
 
     protected $guarded = [];
 
+    public function getCreatedAtAttribute($value)
+    {
+        return date('d M Y', strtotime($value));
+    }
+
     protected function getImagesAttribute($value)
     {
         return unserialize($value);
@@ -20,7 +25,7 @@ class Property extends Model
 
     public function agent()
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function locations()

@@ -10,6 +10,7 @@
 
 @yield('content')
 
+@include('common.footer.footer')
 @include('common.footer.script')
 
 </body>

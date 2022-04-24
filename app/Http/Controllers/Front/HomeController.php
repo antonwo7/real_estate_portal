@@ -11,10 +11,12 @@ use App\Models\Slider;
 use App\Models\Testimonial;
 use App\Models\User;
 
-class HomeController extends BaseController
+class HomeController extends PageController
 {
     public function index()
     {
+        $page = $this->pagesService->getPageBySlug('index');
+
         $sliders = Slider::all();
         $featured_properties = Property::where('featured', 1)->get()->take(7);
         $services = Service::all()->take(3);
@@ -32,6 +34,9 @@ class HomeController extends BaseController
         $news = News::all()->take(4);
 
         return view('home')
+            ->with('page', $page)
+            ->with('page_meta', $page->getPageMeta())
+            ->with('menu', $this->pagesService->getMenuPages())
             ->with('settings', $this->settingsService->getAllSettings())
             ->with('sliders', $sliders)
             ->with('featured_properties', $featured_properties)

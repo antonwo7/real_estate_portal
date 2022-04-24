@@ -2,8 +2,8 @@
 <div class="services content-area-20 bg-white">
     <div class="container">
         <div class="main-title">
-            <h1>What Are you Looking For?</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+            <h1>{{ $page_meta['services-section-title'] }}</h1>
+            <p>{{ $page_meta['services-section-subtitle'] }}</p>
         </div>
         <div class="row">
             @foreach($services as $i => $service)

@@ -15,15 +15,19 @@
                     <button class="navbar-toggler" type="button" id="drawer">
                         <span class="fa fa-bars"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbar">
-                        <ul class="navbar-nav justify-content-end ml-auto">
-                            <li class="nav-item dropdown active">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Index
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    @if(!empty($menu))
+                        <div class="collapse navbar-collapse" id="navbar">
+                            <ul class="navbar-nav justify-content-end ml-auto">
+                                @foreach($menu as $item)
+                                    <li class="nav-item dropdown active">
+                                        <a class="nav-link" href="{{ url($item->slug) }}">
+                                            {{ $item->title }}
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                 </nav>
             </div>
         </div>
