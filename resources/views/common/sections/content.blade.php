@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-12 col-md-12">
                 <div class="about-info">
-                    {{ $page->content }}
+                    {{ $page_content }}
                 </div>
             </div>
         </div>

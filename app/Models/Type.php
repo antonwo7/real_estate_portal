@@ -15,8 +15,13 @@ class Type extends Model
         return $this->id;
     }
 
+    public function getPropertiesCount()
+    {
+        return count($this->properties);
+    }
+
     public function properties()
     {
-        return $this->belongsToMany(Property::class, 'property_types', 'property_id', 'type_id');
+        return $this->belongsToMany(Property::class, 'property_types', 'type_id', 'property_id');
     }
 }

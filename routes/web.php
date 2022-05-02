@@ -15,7 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\Front\HomeController::class, 'index']);
 Route::post('/subscribe', [App\Http\Controllers\Front\SubscriptionController::class, 'store']);
-Route::get('/{slug}', [App\Http\Controllers\Front\PageController::class, 'index']);
+//Route::post('/properties', [App\Http\Controllers\Front\PropertiesController::class, 'index']);
+
+Route::get('/{slug}', [App\Http\Controllers\Front\InnerController::class, 'index']);
+
+Route::get('/properties/{slug}', [App\Http\Controllers\Front\PropertyController::class, 'show']);
 
 Route::group(['namespace' => 'Front', 'prefix' => 'front'], function() {
 

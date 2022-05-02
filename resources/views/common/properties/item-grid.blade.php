@@ -1,6 +1,6 @@
 <div class="property-box">
     <div class="property-thumbnail">
-        <a href="#" class="property-img">
+        <a href="{{ $property->url }}" class="property-img">
             <div class="listing-badges">
                 @if($property->featured)
                     <span class="featured">Featured</span>
@@ -11,7 +11,7 @@
                 <div class="plan-price"><sup>$</sup>{{ $property->price }}<span></span> </div>
             @endif
             @if(!empty($property->images))
-                <img src="{{ asset('img/property') . '/' . $property->images[0] }}" alt="property-box" class="img-fluid">
+                <img src="{{ $property->images[0] }}" alt="property-box" class="img-fluid">
             @endif
         </a>
         <div class="property-overlay">
@@ -26,11 +26,11 @@
                     @foreach($property->images as $i => $image)
                         @if($i > 0)
                             @if($i === 1)
-                                <a href="{{ asset('/img/property') . '/' . $image }}" class="overlay-link">
+                                <a href="{{ $image }}" class="overlay-link">
                                     <i class="fa fa-expand"></i>
                                 </a>
                             @else
-                                <a href="{{ asset('/img/property') . '/' . $image }}" class="hidden"></a>
+                                <a href="{{ $image }}" class="hidden"></a>
                             @endif
                         @endif
                     @endforeach

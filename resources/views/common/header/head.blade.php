@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{{ $page->meta_title }}</title>
-    <meta name="keywords" content="{{ $page->meta_keywords }}">
-    <meta name="description" content="{{ $page->meta_description }}">
+    <title>{{ $page_meta_title }}</title>
+    <meta name="keywords" content="{{ $page_meta_keywords }}">
+    <meta name="description" content="{{ $page_meta_description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <!-- External CSS libraries -->
@@ -29,6 +29,6 @@
 
     <!-- Custom Stylesheet -->
     <link type="text/css" rel="stylesheet" href="{{ asset('/css/style.css') }}">
-    <link rel="stylesheet" type="text/css" id="style_sheet" href="{{ asset('/css/skins/default.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/skins/default.css') }}">
 
 </head>

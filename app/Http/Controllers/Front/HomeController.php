@@ -11,9 +11,9 @@ use App\Models\Slider;
 use App\Models\Testimonial;
 use App\Models\User;
 
-class HomeController extends PageController
+class HomeController extends InnerController
 {
-    public function index()
+    public function index($slug = null)
     {
         $page = $this->pagesService->getPageBySlug('index');
 
@@ -34,7 +34,11 @@ class HomeController extends PageController
         $news = News::all()->take(4);
 
         return view('home')
-            ->with('page', $page)
+            ->with('page_title', $page->title)
+            ->with('page_content', $page->content)
+            ->with('page_meta_title', $page->meta_title)
+            ->with('page_meta_keywords', $page->meta_keywords)
+            ->with('page_meta_description', $page->meta_description)
             ->with('page_meta', $page->getPageMeta())
             ->with('menu', $this->pagesService->getMenuPages())
             ->with('settings', $this->settingsService->getAllSettings())

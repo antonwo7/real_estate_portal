@@ -38,7 +38,10 @@ class PropertiesSeeder extends Seeder
             'video' => 'https://youtu.be/6XMuUVw7TOM',
             'related_properties' => '',
             'featured' => true,
-            'user_id' => $agents->random()->id
+            'user_id' => $agents->random()->id,
+            'meta_title' => 'Modern Family Home',
+            'meta_keywords' => 'Modern Family Home',
+            'meta_description' => 'Modern Family Home',
         ]);
         Property::create([
             'title' => 'Modern Family Home',
@@ -59,7 +62,10 @@ class PropertiesSeeder extends Seeder
             'video' => 'https://youtu.be/6XMuUVw7TOM',
             'related_properties' => '',
             'featured' => true,
-            'user_id' => $agents->random()->id
+            'user_id' => $agents->random()->id,
+            'meta_title' => 'Modern Family Home 1',
+            'meta_keywords' => 'Modern Family Home',
+            'meta_description' => 'Modern Family Home',
         ]);
         Property::create([
             'title' => 'Relaxing Apartment',
@@ -80,7 +86,10 @@ class PropertiesSeeder extends Seeder
             'video' => 'https://youtu.be/6XMuUVw7TOM',
             'related_properties' => '',
             'featured' => true,
-            'user_id' => $agents->random()->id
+            'user_id' => $agents->random()->id,
+            'meta_title' => 'Modern Family Home 2',
+            'meta_keywords' => 'Modern Family Home',
+            'meta_description' => 'Modern Family Home',
         ]);
         Property::create([
             'title' => 'Beautiful Single Home',
@@ -101,7 +110,10 @@ class PropertiesSeeder extends Seeder
             'video' => 'https://youtu.be/6XMuUVw7TOM',
             'related_properties' => '',
             'featured' => true,
-            'user_id' => $agents->random()->id
+            'user_id' => $agents->random()->id,
+            'meta_title' => 'Modern Family Home 3',
+            'meta_keywords' => 'Modern Family Home',
+            'meta_description' => 'Modern Family Home',
         ]);
         Property::create([
             'title' => 'Real Luxury Villa',
@@ -122,7 +134,10 @@ class PropertiesSeeder extends Seeder
             'video' => 'https://youtu.be/6XMuUVw7TOM',
             'related_properties' => '',
             'featured' => true,
-            'user_id' => $agents->random()->id
+            'user_id' => $agents->random()->id,
+            'meta_title' => 'Modern Family Home 4',
+            'meta_keywords' => 'Modern Family Home',
+            'meta_description' => 'Modern Family Home',
         ]);
         Property::create([
             'title' => 'Masons Villas',
@@ -143,7 +158,10 @@ class PropertiesSeeder extends Seeder
             'video' => 'https://youtu.be/6XMuUVw7TOM',
             'related_properties' => '',
             'featured' => true,
-            'user_id' => $agents->random()->id
+            'user_id' => $agents->random()->id,
+            'meta_title' => 'Modern Family Home 5',
+            'meta_keywords' => 'Modern Family Home',
+            'meta_description' => 'Modern Family Home',
         ]);
         Property::create([
             'title' => 'Sweet Family Home',
@@ -164,7 +182,10 @@ class PropertiesSeeder extends Seeder
             'video' => 'https://youtu.be/6XMuUVw7TOM',
             'related_properties' => '',
             'featured' => true,
-            'user_id' => $agents->random()->id
+            'user_id' => $agents->random()->id,
+            'meta_title' => 'Modern Family Home 6',
+            'meta_keywords' => 'Modern Family Home',
+            'meta_description' => 'Modern Family Home',
         ]);
         Property::create([
             'title' => 'Modern Villa',
@@ -185,7 +206,10 @@ class PropertiesSeeder extends Seeder
             'video' => 'https://youtu.be/6XMuUVw7TOM',
             'related_properties' => '',
             'featured' => true,
-            'user_id' => $agents->random()->id
+            'user_id' => $agents->random()->id,
+            'meta_title' => 'Modern Family Home 7',
+            'meta_keywords' => 'Modern Family Home',
+            'meta_description' => 'Modern Family Home',
         ]);
         Property::create([
             'title' => 'Modern Bungalow',
@@ -206,7 +230,10 @@ class PropertiesSeeder extends Seeder
             'video' => 'https://youtu.be/6XMuUVw7TOM',
             'related_properties' => '',
             'featured' => true,
-            'user_id' => $agents->random()->id
+            'user_id' => $agents->random()->id,
+            'meta_title' => 'Modern Family Home 8',
+            'meta_keywords' => 'Modern Family Home',
+            'meta_description' => 'Modern Family Home',
         ]);
     }
 }

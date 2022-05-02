@@ -17,6 +17,7 @@ class PageMetasSeeder extends Seeder
     {
         $home_page_id = Page::where('slug', 'index')->get()->first()->id;
         $about_page_id = Page::where('slug', 'about')->get()->first()->id;
+        $properties_page_id = Page::where('slug', 'properties')->get()->first()->id;
 
         PageMeta::getQuery()->delete();
 
@@ -38,5 +39,6 @@ class PageMetasSeeder extends Seeder
         PageMeta::create(['title' => 'Subscription section subtitle', 'value' => 'Your download should start automatically, if not Click here. Should I give up, huh?.', 'page_id' => $home_page_id]);
 
         PageMeta::create(['title' => 'Header banner', 'value' => 'banners/img-3.png', 'page_id' => $about_page_id]);
+        PageMeta::create(['title' => 'Header banner', 'value' => 'banners/img-2.png', 'page_id' => $properties_page_id]);
     }
 }
