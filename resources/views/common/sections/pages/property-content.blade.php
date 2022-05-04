@@ -172,197 +172,62 @@
                         @endif
                     </div>
                 </div>
-                <!-- Amenities box start -->
-                <div class="amenities-box mb-45">
-                    <h3 class="heading-3">Condition</h3>
-                    <div class="row">
-                        <div class="col-md-4 col-sm-6">
-                            <ul>
-                                <li><span><i class="flaticon-bed"></i> 3 Beds</span></li>
-                                <li><span><i class="flaticon-bath"></i> 2 Bathroom</span></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <ul>
-                                <li><span><i class="flaticon-car-repair"></i> 1 Garage</span></li>
-                                <li><span><i class="flaticon-balcony-and-door"></i>1 Balcony</span></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <ul>
-                                <li><span><i class="flaticon-square-layouting-with-black-square-in-east-area"></i> 4800 sq ft</span></li>
-                                <li><span><i class="flaticon-monitor"></i> TV</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Features opions start -->
-                <div class="features-opions mb-45">
-                    <h3 class="heading-3">Features</h3>
-                    <div class="row">
-                        <div class="col-md-4 col-sm-6">
-                            <ul>
-                                <li>
-                                    <i class="flaticon-air-conditioner"></i>
-                                    Air conditioning
-                                </li>
-                                <li>
-                                    <i class="flaticon-wifi-connection-signal-symbol"></i>
-                                    Wifi
-                                </li>
-                                <li>
-                                    <i class="flaticon-swimmer"></i>
-                                    Swimming Pool
-                                </li>
-                                <li>
-                                    <i class="flaticon-bed"></i>
-                                    Double Bed
-                                </li>
-                                <li>
-                                    <i class="flaticon-balcony-and-door"></i>
-                                    Balcony
-                                </li>
 
-                            </ul>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <ul>
-                                <li>
-                                    <i class="flaticon-old-typical-phone"></i>
-                                    Telephone
-                                </li>
-                                <li>
-                                    <i class="flaticon-car-repair"></i>
-                                    Garage
-                                </li>
-                                <li>
-                                    <i class="flaticon-parking"></i>
-                                    Parking
-                                </li>
-                                <li>
-                                    <i class="flaticon-monitor"></i>
-                                    TV
-                                </li>
-                                <li>
-                                    <i class="flaticon-theatre-masks"></i>
-                                    Home Theater
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <ul>
-                                <li>
-                                    <i class="fa fa-clock-o"></i>
-                                    Alarm
-                                </li>
-                                <li>
-                                    <i class="flaticon-padlock"></i>
-                                    Security
-                                </li>
-                                <li>
-                                    <i class="flaticon-weightlifting"></i>
-                                    Gym
-                                </li>
-                                <li>
-                                    <i class="flaticon-idea"></i>
-                                    Electric Range
-                                </li>
-                                <li>
-                                    <i class="flaticon-green-park-city-space"></i>
-                                    Private space
-                                </li>
-                            </ul>
+                @if($property->features)
+                    <!-- Features options start -->
+                    <div class="features-opions mb-45">
+                        <h3 class="heading-3">Features</h3>
+                        <div class="row">
+                            @foreach($property->features as $featureColumn)
+                                <div class="col-md-4 col-sm-6">
+                                    <ul>
+                                        @foreach($featureColumn as $feature)
+                                            <li>
+                                                <i class="{{ $feature['icon'] }}"></i>
+                                                {{ $feature['value'] }}
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
-                </div>
-                <!-- Comments section start -->
-                <div class="comments-section mb-60">
-                    <h3 class="heading-3">Comments Section</h3>
-                    <ul class="comments">
-                        <li>
-                            <div class="comment">
-                                <div class="comment-author">
-                                    <a href="#">
-                                        <img src="assets/img/avatar/avatar-13.png" alt="avatar-13">
-                                    </a>
-                                </div>
-                                <div class="comment-content">
-                                    <div class="comment-meta">
-                                        <div class="comment-meta-author">
-                                            Brandon Miller
-                                        </div>
-                                        <div class="comment-meta-reply">
-                                            <a href="#">Reply</a>
-                                        </div>
-                                        <div class="comment-meta-date">
-                                            <cite>8:42 PM 10/3/2020</cite>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <div class="comment-body">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus tincidunt aliquam. Aliquam gravida massa at sem vulputate interdum et vel eros. Maecenas eros enim, tincidunt vel turpis vel, dapibus tempus nulla.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <ul>
+                @endif
+
+                @if($property->comments)
+                    <!-- Comments section start -->
+                    <div class="comments-section mb-60">
+                        <h3 class="heading-3">Comments Section</h3>
+                        <ul class="comments">
+                            @foreach($property->comments as $comment)
                                 <li>
                                     <div class="comment">
                                         <div class="comment-author">
                                             <a href="#">
-                                                <img src="assets/img/avatar/avatar-13.png" alt="avatar-13">
+                                                <img src="{{ $comment->avatar }}" alt="avatar-13">
                                             </a>
                                         </div>
                                         <div class="comment-content">
                                             <div class="comment-meta">
                                                 <div class="comment-meta-author">
-                                                    Antony John
+                                                    {{ $comment->name }}
                                                 </div>
-
-                                                <div class="comment-meta-reply">
-                                                    <a href="#">Reply</a>
-                                                </div>
-
                                                 <div class="comment-meta-date">
-                                                    <span>8:42 PM 10/3/2020</span>
+                                                    <cite>{{ $comment->created_at }}</cite>
                                                 </div>
                                             </div>
                                             <div class="clearfix"></div>
                                             <div class="comment-body">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus tincidunt aliquam. Aliquam gravida massa at sem vulputate interdum.</p>
+                                                <p>{{ $comment->text }}</p>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <div class="comment">
-                                <div class="comment-author">
-                                    <a href="#">
-                                        <img src="assets/img/avatar/avatar-13.png" alt="avatar-13">
-                                    </a>
-                                </div>
-                                <div class="comment-content">
-                                    <div class="comment-meta">
-                                        <div class="comment-meta-author">
-                                            Jane Doe
-                                        </div>
-                                        <div class="comment-meta-reply">
-                                            <a href="#">Reply</a>
-                                        </div>
-                                        <div class="comment-meta-date">
-                                            <span>8:42 PM 10/3/2020</span>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <div class="comment-body">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus tincidunt aliquam. Aliquam gravida massa at sem vulputate interdum et vel eros. Maecenas eros enim, tincidunt vel turpis vel, dapibus tempus nulla. Donec vel nulla dui.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <!-- Contact 3 start -->
                 <div class="contact-3">
                     <h3 class="heading-3">Leave a Comment</h3>

@@ -53,8 +53,25 @@ class Property extends Model
         }
 
         return array_map(function($propertyId){
-            return Property::where('id', $propertyId)->first();
+            return Property::find($propertyId);
         }, $relatedProperties);
+    }
+
+    public function getFeaturesAttribute($value)
+    {
+        $features = unserialize($value);
+
+        if(!$features){
+            return $features;
+        }
+
+        $itemsInColumn = (integer)ceil(count($features) / 3);
+
+        return [
+            array_slice($features, 0, $itemsInColumn),
+            array_slice($features, $itemsInColumn, $itemsInColumn),
+            array_slice($features, $itemsInColumn, $itemsInColumn)
+        ];
     }
 
     public function getUrlAttribute($value)
@@ -91,4 +108,15 @@ class Property extends Model
     {
         return $this->belongsToMany(Deal::class);
     }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class)->where('moderated', true);
+    }
+
+//    public function getCommentsAttribute($comments)
+//    {
+//        return $comments;
+//    }
+
 }
